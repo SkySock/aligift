@@ -1,0 +1,55 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> {% block title %} AliGift {% endblock %}</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script defer src="{% static "web/js/script.js" %}"></script>
+    <link rel="stylesheet" href="{% static "web/css/style.css" %}">
+</head>
+
+<body>
+    <div class="wrapper">
+        <header>
+                <div class="header-main">
+                    <a href="/" class="logo">
+                        <img src="{% static "web/img/logo.png" %}" alt="AliGift">
+                        <p>идеи для подарков с AliExpress</p>
+                    </a>
+                    <form action="{% url 'web:product_search' %}" id="form_search" method="get">
+                        <input type="search" name="query" id="search" placeholder="Поиск по сайту">
+                        <button class="search-button">
+                            <img src="{% static "web/img/search.png" %}" alt="">
+                        </button>
+                    </form>
+                    <button id="burg-button">
+                        <img src="{% static "web/img/burg.png" %}" alt="">
+                    </button>
+                </div>
+            </header>
+
+        <main>
+            {% block categories %}
+
+            {% endblock %}
+            <div class="goods">
+                {% block products_list %}
+
+                {% endblock %}
+            </div>
+            <div class="more-button">
+                <button id="button_more">Показать ещё</button>
+            </div>
+        </main>
+
+        <footer>
+            <p class="contacts">© 2021 AliGift</p>
+        </footer>
+    </div>
+
+
+</body>
+</html>

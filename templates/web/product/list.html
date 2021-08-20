@@ -1,0 +1,27 @@
+{% extends "web/base.html" %}
+{% load static %}
+
+{% block categories %}
+    <div class="categories">
+        <div class="search-menu"></div>
+        <ul>
+            <a href="{% url "web:product_list" %}">
+                <li {% if not category %}class="selected"{% endif %}>
+                    Все
+                </li>
+            </a>
+            {% for c in categories %}
+                <a href="{{ c.get_absolute_url }}">
+                    <li {% if category.slug == c.slug %}class="selected" {% endif %}>
+                        {{ c.name }}
+                    </li>
+                </a>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}
+
+{% block products_list %}
+{% endblock %}
+
+
