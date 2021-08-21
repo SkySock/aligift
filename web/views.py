@@ -9,10 +9,12 @@ from .forms import SearchForm
 
 class ProductList(View):
     category = None
-    categories = Category.objects.all()
-    products = Product.objects.all()
+    categories = []
+    products = []
 
     def get(self, request, category_slug=None, *args, **kwargs):
+        self.categories = Category.objects.all()
+        self.products = Product.objects.all()
         if category_slug:
             self.category = get_object_or_404(Category, slug=category_slug)
             self.products = self.products.filter(category=self.category)
