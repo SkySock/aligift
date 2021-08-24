@@ -204,7 +204,7 @@ button img {
 
 footer {
     width: 100%;
-    height: 7vh;
+    height: 60px;
     text-align: center;
     background-color: rgb(201, 201, 201);
     flex: 0 0 auto;
@@ -249,16 +249,21 @@ footer {
 }
 
 @media (max-width: 768px) {
+    body.lock {
+        overflow: hidden;
+    }
+
     .categories {
-        height: auto;
-        width: 90vw;
+        height: 100%;
+        width: 100%;
         margin-top: 85px;
         position: fixed;
-        top: -100%;
-        right: 10px;
-        border-radius: 0 0 10px 10px;
+        top: -101%;
+        right: 0;
         z-index: 99;
         background-color: white;
+        padding-top: 5px;
+        overflow: auto;
         transition: all 0.5s ease;
     }
 
@@ -267,7 +272,11 @@ footer {
     }
 
     .categories li {
-        width: 88vw;
+        font-size: 24px;
+    }
+
+    .search-button {
+        top: 5px;
     }
 
     .goods {
@@ -281,22 +290,6 @@ footer {
         right: 10px;
     }
 
-    .background-menu {
-        position: fixed;
-        top: 0;
-        left: 0;
-        z-index: 98;
-        width: 100vw;
-        height: 100vh;
-        background-color: rgba(128, 128, 128, 0.336);
-        opacity: 0;
-        transition: all 0.5s ease;
-    }
-
-    .background-menu.active {
-        opacity: 1;
-    }
-
     .more-button {
         margin: 0;
     }
@@ -304,6 +297,6 @@ footer {
 
 @media (max-width: 576px) {
     .goods {
-        grid-auto-rows: 75vw;
+        grid-auto-rows: 85vw;
     }
 }

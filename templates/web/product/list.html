@@ -3,7 +3,14 @@
 
 {% block categories %}
     <div class="categories">
-        <div class="search-menu"></div>
+        <div class="search-menu">
+            <form action="{% url 'web:product_search' %}" id="form_search" method="get">
+                        <input type="search" name="query" id="search" placeholder="Поиск по сайту">
+                        <button class="search-button">
+                            <img src="{% static "web/img/search.png" %}" alt="">
+                        </button>
+            </form>
+        </div>
         <ul>
             <a href="{% url "web:product_list" %}">
                 <li {% if not category %}class="selected"{% endif %}>

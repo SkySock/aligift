@@ -1,6 +1,7 @@
 $(document).ready(function() {
     $('#burg-button').click(function(event) {
-        $('.categories, .background-menu').toggleClass('active');
+        $('.categories').toggleClass('active');
+        $('body').toggleClass('lock');
     });
 }); 
 
@@ -17,8 +18,7 @@ $(document).ready(function() {
 
 
 $( document ).ready(function() {
-    $( 'body' ).append( '<button id="toTop" title="Go to top"><img src="static/web/img/arrow.png" /></button>' );
-     $("#toTop").css({"display": "none", "position": "fixed", "bottom": "20px", "right": "20px", "z-index": "1000", "border": "none", "outline": "none", "background": "none", "cursor": "pointer"});
+     $("#toTop").css({"display": "none", "position": "fixed", "bottom": "20px", "right": "20px", "z-index": "98", "border": "none", "outline": "none", "background": "none", "cursor": "pointer"});
      $(window).scroll(function() {
         if ($(this).scrollTop() > 200) {
           $('#toTop').fadeIn();
@@ -63,20 +63,3 @@ function getProductsPage(page) {
         }
     });
 }
-
-// $(document).ready(function() {
-//     let goods = [
-//         { name: "Phone", description: "спецификация, описание, характеристика, определение, технические условия, детализация", img: "img/домик.png", link: "https://vk.com/im?sel=124672106"},
-//         { name: "Bike", description: "спецификация, описание, характеристика, определение, технические условия, детализация", img: "img/домик.png", link: "https://vk.com/im?sel=124672106"},
-//         { name: "Copter", description: "спецификация, описание, характеристика, определение, технические условия, детализация", img: "img/домик.png", link: "https://vk.com/im?sel=124672106"},
-//         { name: "Copter", description: "спецификация, описание, характеристика, определение, технические условия, детализация", img: "img/домик.png", link: "https://vk.com/im?sel=124672106"},
-//         { name: "Copter", description: "спецификация, описание, характеристика, определение, технические условия, детализация", img: "img/домик.png", link: "https://vk.com/im?sel=124672106"},
-//         { name: "Mouse", description: "спецификация, описание, характеристика, определение, технические условия, детализация", img: "img/домик.png", link: "https://vk.com/im?sel=124672106"}
-//     ];
-//     $.each(goods, function(index, value){
-//         $('.goods').prepend('<figure><a href="'+ value.link +'" target="_blank"><div class="item"><img src="' + value.img + '" alt="goods"><figcaption><h3>'+ value.name +'</h3><p>'+ value.description +'</p></figcaption></div></a></figure>');
-//         if(goods.length <= 18) {
-//             $('.more-button').css({"display": "none"});
-//         }
-//     });
-// }); 

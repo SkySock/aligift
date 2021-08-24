@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="yandex-verification" content="00df07bb6b3050b6" />
+    <meta name="verify-admitad" content="6fb2c574e1" />
     <title> {% block title %} AliGift {% endblock %}</title>
     <link rel="shortcut icon" href={% static "web/img/favicon.png" %} type="image/png">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -13,6 +15,21 @@
 </head>
 
 <body>
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript" >
+       (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+       m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+       (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+       ym(84255235, "init", {
+            clickmap:true,
+            trackLinks:true,
+            accurateTrackBounce:true
+       });
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/84255235" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <!-- /Yandex.Metrika counter -->
+
     <div class="wrapper">
         <header>
                 <div class="header-main">
@@ -20,12 +37,6 @@
                         <img src="{% static "web/img/logo.png" %}" alt="AliGift">
                         <p>идеи для подарков с AliExpress</p>
                     </a>
-                    <form action="{% url 'web:product_search' %}" id="form_search" method="get">
-                        <input type="search" name="query" id="search" placeholder="Поиск по сайту">
-                        <button class="search-button">
-                            <img src="{% static "web/img/search.png" %}" alt="">
-                        </button>
-                    </form>
                     <button id="burg-button">
                         <img src="{% static "web/img/burg.png" %}" alt="">
                     </button>
@@ -51,6 +62,6 @@
         </footer>
     </div>
 
-
+<button id="toTop" title="Go to top"><img src="{% static "web/img/arrow.png" %}" /></button>
 </body>
 </html>
