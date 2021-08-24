@@ -9,9 +9,11 @@ $(document).ready(function() {
     $(window).on('load resize', function() {
         if ($(window).width() <= '769'){
             $("#form_search").appendTo($(".search-menu"));
+            $('#form_search').css({"display": "flex"});
         }
         else   {
             $("#form_search").appendTo($(".header-main"));
+            $('#form_search').css({"display": "flex"});
         }
    });
 });
